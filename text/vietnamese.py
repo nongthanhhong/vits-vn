@@ -21,7 +21,6 @@ def collapse_whitespace(text):
 def vi_to_ipa(text):
     text = text.lower()
     text = text_normalize(text)
-    text = normalize_numbers(text)
     phonemes = vi2IPA(text)
     phonemes = collapse_whitespace(phonemes)
     return phonemes
