@@ -153,7 +153,7 @@ def get_hparams(init=True):
                       help='Model name')
   
   args = parser.parse_args()
-  model_dir = "../drive/MyDrive/vits-finetune"
+  model_dir = "../drive/MyDrive/CS_project/Text to speech/vits-vn"
   model_dir = os.path.join(model_dir, args.model)
 
   if not os.path.exists(model_dir):

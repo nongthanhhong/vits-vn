@@ -1,5 +1,4 @@
 import re
-from text.japanese import japanese_to_romaji_with_accent
 from text.vietnamese import vi_to_ipa
 
 # def japanese_cleaners(text):
