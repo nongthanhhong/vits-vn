@@ -16,7 +16,7 @@ See my modify [vits-vn](https://colab.research.google.com/drive/1H1u-NTGMMz61uOy
 ```sh
 git clone https://github.com/nongthanhhong/vits-vn.git
 ```
-# If you want to train with another languages, or other textcleaner for vietnamese, following step may be helpful
+# If you want to train with other languages, or other textcleaner for vietnamese, following step may be helpful
 ## Choose cleaners
 
 1 - Create: file vietnamese.py in folder "text": setup sub functions for preprocess text, text to ipa 
