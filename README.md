@@ -16,11 +16,17 @@ See my modify [vits-vn](https://colab.research.google.com/drive/1H1u-NTGMMz61uOy
 ```sh
 git clone https://github.com/nongthanhhong/vits-vn.git
 ```
-
+# If you want to train with another languages, or other textcleaner for vietnamese, following step may be helpful
 ## Choose cleaners
-- Fill "text_cleaners" in config.json
-- Edit text/symbols.py
+
+1 - Create: file vietnamese.py in folder "text": setup sub functions for preprocess text, text to ipa 
+2 - Add vietnamese_cleaners function to cleaners.py to process text files
+3 - Create: file vietnamese_base.json in folder "configs"
+
+- Fill "text_cleaners" in your_config_file.json
+- Edit text/symbols.py for your language
 - Remove unnecessary imports from text/cleaners.py
+
 ## Install requirements
 ```sh
 pip install -r requirements.txt
@@ -50,6 +56,12 @@ dataset/001.wav|0|Xin chào
 ```
 ## Preprocess
 If you have done this, set "cleaned_text" to true in config.json
+
+- Change 2 parameters
+  +> ----text_index: 1 for single speaker | 2 for multiple speakers
+  +> --filelists: 2 paths of train.text and val.text
+  +> --text_learners: name of your cleaner (vietnamese_cleaners) was added to file cleaners.py before.
+  for shorter run -> Change defaut args in preprocess.py 
 ```sh
 # Single speaker
 python preprocess.py --text_index 1 --filelists path/to/filelist_train.txt path/to/filelist_val.txt
@@ -57,6 +69,7 @@ python preprocess.py --text_index 1 --filelists path/to/filelist_train.txt path/
 # Mutiple speakers
 python preprocess.py --text_index 2 --filelists path/to/filelist_train.txt path/to/filelist_val.txt
 ```
+Edit "training_files" and "validation_files" in configs/config.json
 <!-- ## Build monotonic alignment search
 ```sh
 cd monotonic_align
@@ -64,6 +77,13 @@ python setup.py build_ext --inplace
 cd ..
 ``` -->
 ## Train
+
+- train.py (for single speaker) | train_ms.py (for multiple speakers) 
+  +> Change file utils.py line 151 to path that save your model
+  +> Change 2 parameters 
+    ++> -c : path to config file of vietnamese_base.json
+    ++> -m : path to checkpoint models (if existed)
+
 ```sh
 # Single speaker
 python train.py -c <config> -m <name_model>
