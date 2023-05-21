@@ -1,12 +1,13 @@
-
 import matplotlib.pyplot as plt
 import IPython.display as ipd
+import soundfile as sf
 
 import os
 import json
 import math
 import torch
 from torch import nn
+import librosa
 from torch.nn import functional as F
 from torch.utils.data import DataLoader
 
@@ -33,7 +34,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--config_path", default= "configs/vietnamese_base.json")
     parser.add_argument("--path_to_model", default= "/path/to/model.pth")
-    parser.add_argument("--text",default= "xin ch\xE0o")
+    parser.add_argument("--text", default= "xin ch\xE0o")
 
     args = parser.parse_args()
 
@@ -60,3 +61,4 @@ if __name__ == '__main__':
         x_tst_lengths = torch.LongTensor([stn_tst.size(0)]).cuda()
         audio = net_g.infer(x_tst, x_tst_lengths, noise_scale=.667, noise_scale_w=0.8, length_scale=1)[0][0,0].data.cpu().float().numpy()
     ipd.display(ipd.Audio(audio, rate=hps.data.sampling_rate, normalize=False))
+    sf.write('/content/test.wav', audio, hps.data.sampling_rate)
