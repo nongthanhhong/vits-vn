@@ -1,8 +1,9 @@
 # vits-vn
  Vietnamese TTS  with VITS
 
-original repo: https://github.com/jaywalnut310/vits
+Original repo: https://github.com/jaywalnut310/vits
 
+Text cleaner inspired by https://github.com/CjangCjengh/vits
 ## Online training
 ### colab
 Thanks to [vits-finetuning](https://github.com/SayaSS/vits-finetuning)
@@ -25,6 +26,10 @@ git clone https://github.com/nongthanhhong/vits-vn.git
 pip install -r requirements.txt
 ```
 ## Create datasets
+- Speaker ID should be between 0-803.
+- About 50 audio-text pairs will suffice and 100-600 epochs could have quite good performance, but more data may be better. 
+- Resample all audio to 22050Hz, 16-bit, mono wav files.
+- Audio files should be >=1s and <=10s.
 ### Single speaker
 "n_speakers" should be 0 in config.json
 ```
