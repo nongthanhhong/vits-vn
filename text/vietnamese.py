@@ -1,5 +1,4 @@
 import re
-from unidecode import unidecode
 from viphoneme import vi2IPA
 from viphoneme import syms
 
