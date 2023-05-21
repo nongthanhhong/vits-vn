@@ -57,7 +57,7 @@ dataset/001.wav|0|Xin chào
 ## Preprocess
 If you have done this, set "cleaned_text" to true in config.json
 
-- Change 2 parameters
+- Change 
 
   +> --text_index: 1 for single speaker | 2 for multiple speakers
 
@@ -87,12 +87,11 @@ cd ..
 
   +> Change file utils.py line 151 to path that save your model
 
-  +> Change 2 parameters 
+  +> Change 
 
     ++> -c : path to config file of vietnamese_base.json
 
     ++> -m : path to checkpoint models (if existed)
-
 
 ```sh
 # Single speaker
