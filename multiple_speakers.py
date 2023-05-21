@@ -1,4 +1,4 @@
-%matplotlib inline
+
 import matplotlib.pyplot as plt
 import IPython.display as ipd
 
