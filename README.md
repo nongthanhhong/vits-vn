@@ -59,7 +59,7 @@ If you have done this, set "cleaned_text" to true in config.json
 
 - Change 2 parameters
 
-  +> ----text_index: 1 for single speaker | 2 for multiple speakers
+  +> --text_index: 1 for single speaker | 2 for multiple speakers
 
   +> --filelists: 2 paths of train.text and val.text
 
@@ -92,7 +92,7 @@ cd ..
     ++> -c : path to config file of vietnamese_base.json
 
     ++> -m : path to checkpoint models (if existed)
-    
+
 
 ```sh
 # Single speaker
