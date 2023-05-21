@@ -13,6 +13,7 @@ vinorm
 underthesea
 eng_to_ipa
 vietnam-number
+librosa
 git+https://github.com/quadrismegistus/prosodic.git
 viphoneme
 ipython
