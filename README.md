@@ -20,7 +20,9 @@ git clone https://github.com/nongthanhhong/vits-vn.git
 ## Choose cleaners
 
 1 - Create: file vietnamese.py in folder "text": setup sub functions for preprocess text, text to ipa 
+
 2 - Add vietnamese_cleaners function to cleaners.py to process text files
+
 3 - Create: file vietnamese_base.json in folder "configs"
 
 - Fill "text_cleaners" in your_config_file.json
