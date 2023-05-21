@@ -58,10 +58,15 @@ dataset/001.wav|0|Xin chào
 If you have done this, set "cleaned_text" to true in config.json
 
 - Change 2 parameters
+
   +> ----text_index: 1 for single speaker | 2 for multiple speakers
+
   +> --filelists: 2 paths of train.text and val.text
+
   +> --text_learners: name of your cleaner (vietnamese_cleaners) was added to file cleaners.py before.
+
   for shorter run -> Change defaut args in preprocess.py 
+
 ```sh
 # Single speaker
 python preprocess.py --text_index 1 --filelists path/to/filelist_train.txt path/to/filelist_val.txt
@@ -79,10 +84,15 @@ cd ..
 ## Train
 
 - train.py (for single speaker) | train_ms.py (for multiple speakers) 
+
   +> Change file utils.py line 151 to path that save your model
+
   +> Change 2 parameters 
+
     ++> -c : path to config file of vietnamese_base.json
+
     ++> -m : path to checkpoint models (if existed)
+    
 
 ```sh
 # Single speaker
