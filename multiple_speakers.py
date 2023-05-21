@@ -32,7 +32,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--config_path", default= "configs/vietnamese_base.json")
     parser.add_argument("--path_to_model", default= "/path/to/model.pth")
-    parser.add_argument("--text", nargs="+", default= "xin ch\xE0o")
+    parser.add_argument("--text", default= "xin ch\xE0o")
 
     args = parser.parse_args()
 
