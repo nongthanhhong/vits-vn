@@ -51,7 +51,7 @@ if __name__ == '__main__':
 
     path_to_model = args.path_to_model
 
-    _ = utils.load_checkpoint(path_to_model, net_g, None)
+    net_g, _, _, _ = utils.load_checkpoint(path_to_model, net_g, None)
 
 
     text = args.text
