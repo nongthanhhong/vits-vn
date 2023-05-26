@@ -47,6 +47,7 @@ if __name__ == '__main__':
         hps.data.filter_length // 2 + 1,
         hps.train.segment_size // hps.data.hop_length,
         **hps.model).cuda()
+    
     _ = net_g.eval()
 
     path_to_model = args.path_to_model
